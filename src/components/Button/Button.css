@@ -234,19 +234,3 @@
     font-size: 16px !important;
   }
 }
-
-@media (max-width: 375px) {
-  .hire-me-mobile .header-hire-me .cta-button {
-    padding: 1rem 3rem !important;
-  }
-}
-
-@media (max-width: 320px) {
-  .hire-me-mobile .header-hire-me .cta-button {
-    padding: 1rem 1.5rem !important;
-  }
-
-  .line-anim a .text {
-    font-size: 14px;
-  }
-}

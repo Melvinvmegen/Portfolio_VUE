@@ -82,19 +82,12 @@ export default {
       padding-left: 2em;
     }
 
-    .blocks-hero {
-      height: 700px !important;
-    }
-
     #first-child {
       padding: 50px !important;
     }
   }
 
   @media (max-width: 400px) {
-    .blocks-hero {
-      height: 800px !important;
-    }
     #first-child {
       padding: 20px !important;
     }

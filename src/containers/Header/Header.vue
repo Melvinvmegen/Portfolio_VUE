@@ -506,10 +506,20 @@ export default {
     }
   }
 
+  @media (max-width: 450px) {
+    .hire-me-mobile .header-hire-me .cta-button {
+      padding: 1rem 3rem !important;
+    }
+  }
+
   @media (max-width: 375px) {
     .nav-menu-mobile .nav-menu-item {
       padding: 20px 30px !important;
       font-size: 18px !important;
+    }
+
+    .hire-me-mobile .header-hire-me .cta-button {
+      padding: 1rem 1.5rem !important;
     }
   }
 
