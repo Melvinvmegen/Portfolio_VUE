@@ -25,7 +25,7 @@ export default {
 
   .hire-me {
     background: #254A5D;
-    border: 2px solid #fff;
+    border: 2px solid #fff !important;
     color: #fff !important;
   }
 
@@ -36,9 +36,7 @@ export default {
   }
 
   .sticky-hire-me {
-    background: transparent;
-    border: 2px solid #254A5D;
-    color: #254A5D;
+    border: 2px solid #254A5D !important;
   }
 
   .sticky-hire-me:hover {

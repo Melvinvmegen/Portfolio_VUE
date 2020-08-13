@@ -38,7 +38,7 @@ export default {
   }
 
   h1,h2 {
-    font-size: 30px;
+    font-size: 30px !important;
     text-decoration: none;
     color: #254a5d;
     line-height: 2;

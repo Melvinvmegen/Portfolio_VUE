@@ -11,7 +11,7 @@
     div.form-group
       input(type="text" id="ville" placeholder="Ville" class="form-control" v-model.lazy="userData.city")
     div.form-group(:class="{invalid: $v.query.$error}")
-      textarea.input-large(type="text" id="demande" placeholder="Formuler votre demande" class="form-control" v-model.lazy="query" @blur="$v.query.$touch()")
+      textarea.input-large(type="text" id="demande" placeholder="Formuler votre demande" class="form-control" v-model.lazy="query" @input="$v.query.$touch()")
     div.form-button
       button.button-form(type="submit" :disabled="$v.$invalid" @click.prevent="onSubmit") Prendre contact
 </template>
@@ -90,7 +90,7 @@ export default {
     box-sizing: border-box;
   }
 
-  .form-group input, textarea {
+  .form-group input {
     margin: 0;
     padding: 5px 20px;
     height: 54px;
@@ -104,6 +104,22 @@ export default {
     box-shadow: 2px 2px 5px rgba(0,0,0,.1)!important;
     border-radius: 8px!important;
     border: 1px solid #e7e7e7!important;
+  }
+
+  .form-group textarea {
+    margin: 0;
+    padding: 5px 20px;
+    height: 54px;
+    border-radius: 0;
+    color: #0b0c11;
+    display: block;
+    width: 80%;
+    margin: 0 auto!important;
+    box-sizing: border-box;
+    background: #fff!important;
+    box-shadow: 2px 2px 5px rgba(0,0,0,.1)!important;
+    border-radius: 8px!important;
+    border: 1px solid #e7e7e7!important;    
   }
 
   .input-large {
