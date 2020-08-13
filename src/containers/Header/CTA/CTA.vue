@@ -3,7 +3,7 @@
     .header-user
       HireMe(:text="text", v-on:openModal='openModal', :className="className")
       Modal(ref="modal")
-        template(slot="title") 
+        template(slot="title")
           .title_underline Prenons contact
 
         template(slot="body")

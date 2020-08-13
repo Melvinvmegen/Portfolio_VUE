@@ -66,6 +66,7 @@ export default {
     align-items: center;
     flex-direction: column;
     padding-top: 10%;
+    min-height: 800px;
   }
 
   .section-testimonials {

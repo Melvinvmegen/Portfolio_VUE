@@ -34,6 +34,7 @@ export default {
     height: 100vh;
     background-color: #D1DDE6 !important;
     box-shadow: inset -4px -10px 50px rgba(76, 189, 184, 0.1);
+    min-height: 800px;
   }
 
   .main-container {
