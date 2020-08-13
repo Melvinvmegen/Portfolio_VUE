@@ -3,7 +3,8 @@
     .header-user
       HireMe(:text="text", v-on:openModal='openModal', :className="className")
       Modal(ref="modal")
-        template(slot="title") Prenons contact
+        template(slot="title") 
+          .title_underline Prenons contact
 
         template(slot="body")
           ContactForm(v-on:closeModal='closeModal')
@@ -46,6 +47,15 @@ export default {
 </script>
 
 <style>
+  .title_underline::after {
+    content: "";
+      display: block;
+      margin: 1rem auto 1rem;
+      height: 15px;
+      width: 65px;
+      border-bottom: .1rem solid #d8d8d8;
+  }
+
   .header-user {
     display: flex;
     margin-top: 10px;
