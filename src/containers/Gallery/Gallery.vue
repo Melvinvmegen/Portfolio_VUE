@@ -120,6 +120,7 @@ export default {
 <style>
   .section-gallery {
     background: #254A5D;
+    min-height: 1200px !important;
   }
 
   .section-slide {

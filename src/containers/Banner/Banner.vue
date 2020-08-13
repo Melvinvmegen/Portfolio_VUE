@@ -34,6 +34,7 @@ export default {
     height: 100vh;
     background-color: #D1DDE6 !important;
     box-shadow: inset -4px -10px 50px rgba(76, 189, 184, 0.1);
+    min-height: 800px;
   }
 
   .main-container {
@@ -82,19 +83,12 @@ export default {
       padding-left: 2em;
     }
 
-    .blocks-hero {
-      height: 700px !important;
-    }
-
     #first-child {
       padding: 50px !important;
     }
   }
 
   @media (max-width: 400px) {
-    .blocks-hero {
-      height: 800px !important;
-    }
     #first-child {
       padding: 20px !important;
     }

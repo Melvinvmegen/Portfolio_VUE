@@ -119,7 +119,7 @@ export default {
     background: #fff!important;
     box-shadow: 2px 2px 5px rgba(0,0,0,.1)!important;
     border-radius: 8px!important;
-    border: 1px solid #e7e7e7!important;    
+    border: 1px solid #e7e7e7!important;
   }
 
   .input-large {

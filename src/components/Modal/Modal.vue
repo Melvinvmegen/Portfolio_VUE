@@ -75,10 +75,16 @@ export default {
     }
   }
 
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media (max-width: 600px) {
     .modal {
-      width: 85%;
-      left: 8%;
+      max-width: 60%;
+      left: calc(50% - 250px);
+    }
+  }
+
+  @media (max-width: 360px) {
+    .modal {
+      max-width: 50% !important;
     }
   }
 </style>

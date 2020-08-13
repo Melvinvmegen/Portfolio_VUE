@@ -80,6 +80,11 @@ export default {
   }
 
   @media (max-width: 769px) {
+    .section {
+      min-height: 1000px !important;
+      height: 90vh;
+    }
+
     .section-wrapper {
       flex-direction: column;
     }
@@ -95,6 +100,12 @@ export default {
       flex: 0 0 100% !important;
       max-width: 100% !important;
       text-align: center;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .section {
+      min-height: 1200px !important;
     }
   }
 </style>
