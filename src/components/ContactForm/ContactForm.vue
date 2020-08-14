@@ -1,17 +1,17 @@
 <template lang="pug">
   form
-    div.text-red(v-if="error") {{ error }}
+    span.error-message(v-if="error") {{ error }}
     div.form-group(:class="{invalid: $v.userData.name.$error}")
-      input(type="text" id="name" placeholder="Nom" class="form-control" v-model.lazy="userData.name" @blur="$v.userData.name.$touch()")
-    div.form-group(:class="{invalid: $v.userData.entreprise.$error}")
-      input(type="text" id="entreprise" placeholder="Entreprise" class="form-control" v-model.lazy="userData.entreprise" @blur="$v.userData.entreprise.$touch()")
+      input(type="text" id="name" placeholder="Nom" class="form-control" v-model.lazy="nameValue" @blur="$v.userData.name.$touch()")
+    div.form-group(:class="{invalid: $v.userData.company.$error}")
+      input(type="text" id="company" placeholder="Entreprise" class="form-control" v-model.lazy="companyValue" @blur="$v.userData.company.$touch()")
     div.form-group(:class="{invalid: $v.userData.email.$error}")
-      input(type="text" id="email" placeholder="Email" class="form-control" v-model.lazy="userData.email" @blur="$v.userData.email.$touch()")
+      input(type="text" id="email" placeholder="Email" class="form-control" v-model.lazy="emailValue" @blur="$v.userData.email.$touch()")
       span.error-message(v-if="!$v.userData.email.email") Veuillez soumettre un email valide
     div.form-group
-      input(type="text" id="ville" placeholder="Ville" class="form-control" v-model.lazy="userData.city")
+      input(type="text" id="ville" placeholder="Ville" class="form-control" v-model.lazy="cityValue")
     div.form-group(:class="{invalid: $v.query.$error}")
-      textarea.input-large(type="text" id="demande" placeholder="Formuler votre demande" class="form-control" v-model.lazy="query" @input="$v.query.$touch()")
+      textarea.input-large(type="text" id="demande" placeholder="Formuler votre demande" class="form-control" v-model.lazy="queryValue" @input="$v.query.$touch()")
     div.form-button
       button.button-form(type="submit" :disabled="$v.$invalid" @click.prevent="onSubmit") Prendre contact
 </template>
@@ -24,7 +24,7 @@ export default {
     return {
       userData: {
         name: '',
-        entreprise: '',
+        company: '',
         email: '',
         city: ''
       },
@@ -37,7 +37,7 @@ export default {
       name: {
         required
       },
-      entreprise: {
+      company: {
         required
       },
       email: {
@@ -47,6 +47,53 @@ export default {
     },
     query: {
       required
+    }
+  },
+  computed: {
+    nameValue: {
+      get () {
+        return this.$store.state.userData.name
+      },
+      set (value) {
+        this.userData.name = value
+        this.$store.commit('setName', value)
+      }
+    },
+    companyValue: {
+      get () {
+        return this.$store.state.userData.company
+      },
+      set (value) {
+        this.userData.company = value
+        this.$store.commit('setCompany', value)
+      }
+    },
+    emailValue: {
+      get () {
+        return this.$store.state.userData.email
+      },
+      set (value) {
+        this.userData.email = value
+        this.$store.commit('setEmail', value)
+      }
+    },
+    cityValue: {
+      get () {
+        return this.$store.state.userData.city
+      },
+      set (value) {
+        this.userData.city = value
+        this.$store.commit('setCity', value)
+      }
+    },
+    queryValue: {
+      get () {
+        return this.$store.state.query
+      },
+      set (value) {
+        this.query = value
+        this.$store.commit('setQuery', value)
+      }
     }
   },
   methods: {
@@ -123,7 +170,7 @@ export default {
   }
 
   .input-large {
-    height: 100px;
+    height: 100px !important;
   }
 
   .form-button {
@@ -156,6 +203,10 @@ export default {
   }
 
   .invalid input {
+    border: 1px solid red !important;
+  }
+
+  .invalid textarea {
     border: 1px solid red !important;
   }
 
