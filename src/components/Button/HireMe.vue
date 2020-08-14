@@ -31,7 +31,7 @@ export default {
 
   .hire-me:hover {
     background: transparent;
-    border: 2px solid #254A5D;
+    border: 2px solid #254A5D !important;
     color: #254A5D !important;
   }
 
