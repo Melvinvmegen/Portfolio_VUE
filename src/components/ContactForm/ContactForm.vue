@@ -9,9 +9,9 @@
       input(type="text" id="email" placeholder="Email" class="form-control" v-model.lazy="emailValue" @blur="$v.userData.email.$touch()")
       span.error-message(v-if="!$v.userData.email.email") Veuillez soumettre un email valide
     div.form-group
-      input(type="text" id="ville" placeholder="Ville" class="form-control" v-model.lazy="cityValue")
+      input(type="text" id="ville" placeholder="Ville" class="form-control" v-model.lazy="cityValue" @focus="scrollAgainstKeyboard($event)")
     div.form-group(:class="{invalid: $v.query.$error}")
-      textarea.input-large(type="text" id="demande" placeholder="Formuler votre demande" class="form-control" v-model.lazy="queryValue" @input="$v.query.$touch()")
+      textarea.input-large(type="text" id="demande" placeholder="Formuler votre demande" class="form-control" v-model.lazy="queryValue" @input="$v.query.$touch()" @focus="scrollAgainstKeyboard($event)")
     div.form-button
       button.button-form(type="submit" :disabled="$v.$invalid" @click.prevent="onSubmit") Prendre contact
 </template>
@@ -97,6 +97,9 @@ export default {
     }
   },
   methods: {
+    scrollAgainstKeyboard (event) {
+      event.currentTarget.scrollIntoView();
+    },
     onSubmit () {
       const formData = {
         name: this.userData.name,
