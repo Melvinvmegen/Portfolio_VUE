@@ -30,7 +30,12 @@ export default {
 
 <style>
   body {
-    font-family: "Montserrat","BuenosAires",sans-serif
+    font-family: "Montserrat","BuenosAires",sans-serif;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
   }
 
   a {

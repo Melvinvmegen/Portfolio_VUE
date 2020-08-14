@@ -51,7 +51,6 @@ export default {
     padding: 30px;
     left: 15%;
     top: 20%;
-    box-sizing: border-box;
     transition: all 0.3s ease-out;
   }
   .close {
@@ -77,14 +76,8 @@ export default {
 
   @media (max-width: 600px) {
     .modal {
-      max-width: 60%;
-      left: calc(50% - 250px);
-    }
-  }
-
-  @media (max-width: 360px) {
-    .modal {
-      max-width: 50% !important;
+      top: 5% !important;
+      overflow-x: scroll;
     }
   }
 </style>

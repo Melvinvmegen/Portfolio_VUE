@@ -164,6 +164,14 @@ export default {
     background: transparent!important;
   }
 
+  .v-window__next button.v-btn {
+    color: #F9423A !important;
+  }
+
+  .v-window__prev button.v-btn {
+    color: #F9423A !important;
+  }
+
   .v-window__prev {
     left: 33.33%;
   }
@@ -231,28 +239,44 @@ export default {
   }
   @media (max-width: 1024px) {
     .v-window, .v-carousel__item {
-      height: 800px!important;
+      height: 820px!important;
     }
   }
 
   @media (max-width: 640px) {
     .v-window__next, .v-window__prev {
-      top: initial!important;
-      bottom: 0;
-      transform: initial;
+      top: 35% !important;
     }
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 540px) {
+    .v-window__next, .v-window__prev {
+      top: 30% !important;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .v-window__next, .v-window__prev {
+      top: 25% !important;
+    }
+  }
+
+
+  @media (max-width: 400px) {
+    .v-window__next, .v-window__prev {
+      top: 20% !important;
+    }
+
     .section-title {
       margin-bottom: 20px;
+    }
+
+    .v-window, .v-carousel__item {
+      height: 950px!important;
     }
   }
 
   @media (max-width: 375px) {
-    .v-window, .v-carousel__item {
-        height: 900px!important;
-    }
     .v-window__next, .v-window__prev {
       margin: 0!important;
     }

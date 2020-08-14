@@ -36,10 +36,6 @@ export default {
   methods: {
     openModal () {
       this.$refs.modal.show()
-      if (this.showMobileNavShown) {
-        console.log(this.$emit('close-mobile-nav'))
-        this.$emit('close-mobile-nav')
-      }
     },
     closeModal () { this.$refs.modal.hide() }
   }
