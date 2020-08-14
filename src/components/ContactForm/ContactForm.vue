@@ -1,6 +1,6 @@
 <template lang="pug">
   form
-    div.text-red(v-if="error") {{ error }}
+    span.error-message(v-if="error") {{ error }}
     div.form-group(:class="{invalid: $v.userData.name.$error}")
       input(type="text" id="name" placeholder="Nom" class="form-control" v-model.lazy="nameValue" @blur="$v.userData.name.$touch()")
     div.form-group(:class="{invalid: $v.userData.company.$error}")
@@ -74,7 +74,6 @@ export default {
       },
       set (value) {
         this.userData.email = value
-        console.log(this.userData.email)
         this.$store.commit('setEmail', value)
       }
     },
