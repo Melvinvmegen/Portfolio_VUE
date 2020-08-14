@@ -10,6 +10,7 @@ import Vuelidate from 'vuelidate'
 import VueTypedJs from 'vue-typed-js'
 import VueParticles from 'vue-particles'
 import vuetify from '@/plugins/vuetify'
+import { store } from './store/store'
 
 import { securedAxioSIntance, plainAxiosIntance } from './backend/axios'
 
@@ -29,6 +30,7 @@ Vue.use(VueParticles)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   securedAxioSIntance,
   plainAxiosIntance,

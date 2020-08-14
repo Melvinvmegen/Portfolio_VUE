@@ -52,6 +52,8 @@ export default {
     left: 15%;
     top: 20%;
     transition: all 0.3s ease-out;
+    height: 700px;
+    overflow-y: scroll;
   }
   .close {
     font-size: 2em;
@@ -77,7 +79,6 @@ export default {
   @media (max-width: 600px) {
     .modal {
       top: 5% !important;
-      overflow-x: scroll;
     }
   }
 </style>
