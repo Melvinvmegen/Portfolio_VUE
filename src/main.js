@@ -15,7 +15,7 @@ import { securedAxioSIntance, plainAxiosIntance } from './backend/axios'
 
 Vue.config.productionTip = false
 
-axios.defaults.baseURL = 'https://mvm-db.herokuapp.com/'
+axios.defaults.baseURL = 'https://mvm-db.herokuapp.com/api/v1'
 axios.defaults.headers.get['Accepts'] = 'application/json'
 
 Vue.use(Vuelidate)
