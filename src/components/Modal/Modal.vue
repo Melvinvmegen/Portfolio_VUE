@@ -36,13 +36,13 @@ export default {
   methods: {
     show () {
       this.showModal = true
-      document.body.style.height = '100vh';
-      document.body.style.overflowY = 'hidden';
+      document.body.style.height = '100vh'
+      document.body.style.overflowY = 'hidden'
     },
     hide () {
       this.showModal = false
-      document.body.style.height = '';
-      document.body.style.overflowY = '';
+      document.body.style.height = ''
+      document.body.style.overflowY = ''
     }
   }
 }
@@ -61,7 +61,7 @@ export default {
     transition: all 0.3s ease-out;
     height: 700px;
   }
-  
+
   .close {
     font-size: 2em;
     position: absolute;

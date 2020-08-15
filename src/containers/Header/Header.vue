@@ -384,7 +384,7 @@ export default {
       transform: rotate(45deg);
       opacity: 1;
     }
-    
+
     .main-header-right {
       margin-right: 30px !important;
     }
