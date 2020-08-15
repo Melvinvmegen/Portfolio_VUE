@@ -1,14 +1,13 @@
 <template lang="pug">
-  .main-header-right
-    .header-user
-      HireMe(:text="text", v-on:openModal='openModal', :className="className")
-      Modal(ref="modal")
-        template(slot="title")
-          .title_underline Prenons contact
+  .header-user
+    HireMe(:text="text", v-on:openModal='openModal', :className="className")
+    Modal(ref="modal")
+      template(slot="title")
+        .title_underline Prenons contact
 
-        template(slot="body")
-          ContactForm(v-on:closeModal='closeModal')
-        .form-submit(slot="footer")
+      template(slot="body")
+        ContactForm(v-on:closeModal='closeModal')
+      .form-submit(slot="footer")
 
 </template>
 
