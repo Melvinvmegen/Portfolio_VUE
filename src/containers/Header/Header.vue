@@ -9,20 +9,20 @@
             Nav(v-if="this.$vuetify.breakpoint.lg")
         .main-header-right
           CTA(v-if="this.$vuetify.breakpoint.md || this.$vuetify.breakpoint.lg")
-          .menu-toggle(v-if="this.$vuetify.breakpoint.sm || this.$vuetify.breakpoint.xs" @click='showMobileNav = !showMobileNav')
+          .menu-toggle(v-if="this.$vuetify.breakpoint.sm || this.$vuetify.breakpoint.xs" @click='showMobilNav')
             .line
             .line
             .line
         .mobile-nav(v-if="showMobileNav")
           .mobile-header
             Logo
-            div(:class="{'menu-toggle-open': showMobileNav, 'menu-toggle' : !showMobileNav}" @click='showMobileNav = !showMobileNav')
+            div(:class="{'menu-toggle-open': showMobileNav, 'menu-toggle' : !showMobileNav}" @click='hideMobilNav')
               .line
               .line
               .line
           Nav
           .hire-me-mobile
-            CTA(:className="true" :showMobileNavShown="showMobileNav" v-on:close-mobile-nav='showMobileNav = !showMobileNav')
+            CTA(:className="true" :showMobileNavShown="showMobileNav" @click='hideMobilNav')
 
 </template>
 
@@ -65,6 +65,16 @@ export default {
       }
       this.disappear = false
       this.sticky = currentScrollPosition > this.scrollFrom
+    },
+    showMobilNav () {
+      this.showMobileNav = true
+      document.body.style.height = '100vh'
+      document.body.style.overflowY = 'hidden'
+    },
+    hideMobilNav () {
+      this.showMobileNav = false
+      document.body.style.height = ''
+      document.body.style.overflowY = ''
     }
   }
 }
