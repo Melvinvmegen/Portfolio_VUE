@@ -98,7 +98,7 @@ export default {
   },
   methods: {
     scrollAgainstKeyboard (event) {
-      this.$refs.button.scrollIntoView()
+      this.$refs.button.scrollIntoView({behavior: 'smooth'})
     },
     onSubmit () {
       const formData = {
