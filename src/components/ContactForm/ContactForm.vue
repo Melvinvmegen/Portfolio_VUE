@@ -1,5 +1,5 @@
 <template lang="pug">
-  form
+  form(ref="form")
     span.error-message(v-if="error") {{ error }}
     div.form-group(:class="{invalid: $v.userData.name.$error}")
       input(type="text" id="name" placeholder="Nom" class="form-control" v-model.lazy="nameValue" @blur="$v.userData.name.$touch()")
@@ -13,7 +13,7 @@
     div.form-group(:class="{invalid: $v.query.$error}")
       textarea.input-large(type="text" id="demande" placeholder="Formuler votre demande" class="form-control" v-model.lazy="queryValue" @input="$v.query.$touch()" @focus="scrollAgainstKeyboard($event)")
     div.form-button
-      button.button-form(type="submit" :disabled="$v.$invalid" @click.prevent="onSubmit") Prendre contact
+      button.button-form(type="submit" :disabled="$v.$invalid" @click.prevent="onSubmit" ref="button") Prendre contact
 </template>
 
 <script>
@@ -98,7 +98,7 @@ export default {
   },
   methods: {
     scrollAgainstKeyboard (event) {
-      event.currentTarget.scrollIntoView();
+      this.$refs.button.scrollIntoView({behavior: 'smooth'})
     },
     onSubmit () {
       const formData = {
