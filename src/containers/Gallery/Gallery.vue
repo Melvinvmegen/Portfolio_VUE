@@ -261,7 +261,6 @@ export default {
     }
   }
 
-
   @media (max-width: 400px) {
     .v-window__next, .v-window__prev {
       top: 20% !important;
