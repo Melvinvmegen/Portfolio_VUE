@@ -83,6 +83,9 @@ export default {
   @media (max-width: 600px) {
     .modal {
       top: 5% !important;
+      width: 90% !important;
+      left: 5% !important;
+      height: 100%;
     }
   }
 </style>
