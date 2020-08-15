@@ -2,6 +2,9 @@
   div
     Backdrop(v-if='showModal' v-on:closemodal='hide()')
     .modal.fade.modal--form(v-show="showModal" ref="modal")
+      .close-modal(@click='hide')
+        .line
+        .line
       .modal-dialog(role="document")
         .modal-content
 
@@ -33,13 +36,13 @@ export default {
   methods: {
     show () {
       this.showModal = true
-      document.body.style.height = '100vh';
-      document.body.style.overflowY = 'hidden';
+      document.body.style.height = '100vh'
+      document.body.style.overflowY = 'hidden'
     },
     hide () {
       this.showModal = false
-      document.body.style.height = '';
-      document.body.style.overflowY = '';
+      document.body.style.height = ''
+      document.body.style.overflowY = ''
     }
   }
 }
@@ -57,8 +60,8 @@ export default {
     top: 20%;
     transition: all 0.3s ease-out;
     height: 700px;
-    overflow-y: scroll;
   }
+
   .close {
     font-size: 2em;
     position: absolute;
@@ -71,6 +74,31 @@ export default {
     text-align: center;
     margin-bottom: 30px;
     font-weight: 700;
+  }
+
+  .close-modal:hover {
+    cursor: pointer;
+  }
+
+  .close-modal .line:nth-child(1) {
+    transform: rotate(-45deg);
+    opacity: 1;
+    position: absolute;
+    right: 30px;
+  }
+
+  .close-modal .line:nth-child(2) {
+    transform: rotate(45deg);
+    opacity: 1;
+    position: absolute;
+    right: 30px;
+  }
+
+  .line {
+    width: 30px;
+    height: 2px;
+    margin: 10px 0;
+    background-color: #000;
   }
 
   @media (min-width: 600px) {
@@ -86,6 +114,7 @@ export default {
       width: 90% !important;
       left: 5% !important;
       height: 100%;
+      overflow-y: scroll;
     }
   }
 </style>

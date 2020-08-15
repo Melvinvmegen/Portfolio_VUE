@@ -29,6 +29,6 @@ export const store = new Vuex.Store({
     },
     setQuery (state, query) {
       state.query = query
-    },
+    }
   }
 })

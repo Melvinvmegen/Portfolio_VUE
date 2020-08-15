@@ -385,13 +385,6 @@ export default {
       opacity: 1;
     }
 
-    .line {
-      width: 30px;
-      height: 2px;
-      margin: 10px 0;
-      background-color: #000;
-    }
-
     .main-header-right {
       margin-right: 30px !important;
     }
@@ -402,10 +395,6 @@ export default {
 
     .menu-logo {
       width: 40%;
-    }
-
-    .menu-toggle:hover {
-      cursor: pointer;
     }
 
     .mobile-nav ul {
